@@ -5,6 +5,7 @@
 
 \newcommand{\lined}{\noindent\rule{\textwidth}{1pt}}
 \newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
 
 
 
@@ -20,8 +21,8 @@
 			Let $X$ be a set. Show that the collection of all subsets of $X$ is a set.
 	\end{problem}
 	
-\lined
-	\begin{proof}
+	\lined
+		\begin{proof}
 		Appealing to the Axiom of Infinity and the Pair Set Axiom we have that $\{0,1\}$ is a set. 
 		By the Power Set Axiom there exists a set containing all functions from $X$ to $\{0,1\}$ which
 		we shall denote as $\{0,1\}^X$. Define the property $P(f,S)$ pertaining to each $f \in \{0,1\}^X$ and
@@ -30,11 +31,44 @@
 		$Q \coloneqq \{S:$ $S = f^{-1}(\{1\})$ for some $f \in \{0,1\}^X\}$ exists and is a set. All that remains to show
 		is that every element of $Q$ is a subset of $X$ and every subset of $X$ is contained in $Q$. Let $Z$ be an arbitrary
 		element of $Q$, then there exists some function $f \in \{0,1\}^X$ such that $Z = f^{-1}(\{1\})$ which is indeed a subset of
-		$X$. Conversly let $Z$ be a subset of $X$. We shall show that there exists some function 
-		$f \in \{0,1\}^X$ such that $Z = f^{-1}(\{1\})$. 
+		$X$. Conversely let $Z$ be a subset of $X$. We shall show that there exists some function 
+		$f \in \{0,1\}^X$ such that $Z = f^{-1}(\{1\})$. For each $x \in X$ define $f$ to be the mapping such that 
+		$f(x) \coloneqq 1$ if $x \in Z$ and $f(x) \coloneqq 0$ if $x \notin Z$. This is clearly a function from $X$ to $\{0,1\}$ which has
+		$Z = f^{-1}(\{1\})$ thus $Z \in Q$ and the result follows.
 		
 	\end{proof}
-\lined
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.4.7]
+		Let $X$ and $Y$ be sets. A function $f:X' \rightarrow Y'$ from a subset $X'$ of $X$ to a subset $Y'$ of $Y$ is
+		said to be a partial function from $X$ to $Y$. If $X$ and $Y$ are sets show that the collection of all partial functions
+		from $X$ to $Y$ is a set.
+	\end{problem}
+
+	\begin{remark}
+		The idea for the proof we shall give is analogous to a sort of double looping construct procedure in a
+		computer programming language. In particular let $2^X$ and $2^Y$ be the collections of all subsets of $X$ and
+		$Y$ respectively which are sets by the previous exercise. Informally, or each element of $2^X$ we loop through each element of
+		$2^Y$ creating a set containing all sets of function spaces where a function space is just the set of all functions from some
+		particular element of $2^X$ to some particular element of $2^Y$. Then we use the Axiom of Union to unbox all these sets of function spaces to get the set of all function spaces. Unboxing these sets in the same manner we get the set of all partial functions from $X$ to $Y$	\end{remark}
+
+	\lined
+		\begin{proof}
+			Since $X$ and $Y$ are sets by the previous exercise asserts that the collection of all subsets of $X$ is a set and also that
+			the collection of all subsets of $Y$ is set. Let $2^X$ and $2^Y$ denote these sets respectively. For each $X' \in 2^X$ and any object S define the property $P(X',S)$ to be the statement $S$ is a set such that for all objects $z$, we have 
+			
+			\[z \in S \iff z = Y'^{X'}\ \text{for some}\  Y' \in 2^Y.\]
+			
+			\noindent There is at most one set $S$ such that $P(X',S)$ is true for each $X' \in 2^X$. Thus by the Axiom of Replacement there exists a set $Q \coloneqq \{S:P(X',S)\ \text{is true for some}\ X' \in 2^X\}$. We observe that $Q$ is a family of sets thus
+			by the axiom of the union the set $\bigcup Q$ exists. This set like $Q$ is also a family of sets. Thus applying the Axiom of Union once again we have that the set $\bigcup(\bigcup Q)$ exists. We claim that every element of $\bigcup(\bigcup Q)$ is a partial function from $X$ to $Y$ and that every partial function from $X$ to $Y$ is contained in $\bigcup(\bigcup Q)$.
+			Let $f'$ be an arbitrary element of $\bigcup(\bigcup Q)$ then $f' \in T$ for some $T \in \bigcup Q$. But then any such $T$ will be contained in $H$ for	some set $H \in Q$. However if $H \in Q$ then for some $X' \in 2^X$	 we have for every object $K$ that $K \in H$ if and only if $K = Y'^{X'}\ \text{for some}\  Y' \in 2^Y$. Thus since $T \in H$ we have $T = Y'^{X'}$ for some 
+			$X' \in 2^X$ and some $Y' \in 2^Y$. So that if $f' \in T$ then $f'$ is a partial function from $X$ to $Y$. We therefore see that every element of $\bigcup(\bigcup Q)$ is a partial function from $X$ to $Y$. Conversely let $f':X' \rightarrow Y'$ be a partial function from $X$ to $Y$ from a subset $X'$ of $X$ to a subset $Y'$ of $Y$.
+		\end{proof}
+	\lined
+
+
 
 	
 
