@@ -22,9 +22,16 @@
 	
 \lined
 	\begin{proof}
-		Appealing the Axiom of Infinity and the Pair Set Axiom we have that $\{0,1\}$ is a set. 
-		By the Power Set Axiom there exists a containing all functions from $X$ to $\{0,1\}$ which
-		we shall denote as $\{0,1\}^X$
+		Appealing to the Axiom of Infinity and the Pair Set Axiom we have that $\{0,1\}$ is a set. 
+		By the Power Set Axiom there exists a set containing all functions from $X$ to $\{0,1\}$ which
+		we shall denote as $\{0,1\}^X$. Define the property $P(f,S)$ pertaining to each $f \in \{0,1\}^X$ and
+		any object $S$ to be the statement $S$ is a set and $S = f^{-1}(\{1\})$.  There is at most one set $S$ 
+		such that $P(f,S)$ is true for each $f \in \{0,1\}^X$. Thus by the Axiom of Replacement
+		$Q \coloneqq \{S:$ $S = f^{-1}(\{1\})$ for some $f \in \{0,1\}^X\}$ exists and is a set. All that remains to show
+		is that every element of $Q$ is a subset of $X$ and every subset of $X$ is contained in $Q$. Let $Z$ be an arbitrary
+		element of $Q$, then there exists some function $f \in \{0,1\}^X$ such that $Z = f^{-1}(\{1\})$ which is indeed a subset of
+		$X$. Conversly let $Z$ be a subset of $X$. We shall show that there exists some function 
+		$f \in \{0,1\}^X$ such that $Z = f^{-1}(\{1\})$. 
 		
 	\end{proof}
 \lined
