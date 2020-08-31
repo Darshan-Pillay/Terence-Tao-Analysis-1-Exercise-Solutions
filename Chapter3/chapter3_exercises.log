@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  29 AUG 2020 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  31 AUG 2020 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -208,7 +208,12 @@ LaTeX Warning: No \author given.
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] (./chapter3_exercises.aux) ) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 86--92
+
+ []
+
+[3] (./chapter3_exercises.aux) ) 
 Here is how much of TeX's memory you used:
  2431 strings out of 480608
  35454 string characters out of 5903630
@@ -216,7 +221,7 @@ Here is how much of TeX's memory you used:
  18324 multiletter control sequences out of 15000+600000
  537454 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,29p,513b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,29p,579b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
@@ -229,10 +234,10 @@ onts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti10.pfb>
-Output written on chapter3_exercises.pdf (2 pages, 119776 bytes).
+Output written on chapter3_exercises.pdf (3 pages, 125996 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

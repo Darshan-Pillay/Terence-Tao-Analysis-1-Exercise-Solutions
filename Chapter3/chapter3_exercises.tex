@@ -69,6 +69,30 @@
 			 
 		\end{proof}
 	\lined
+	
+	\newpage
+	
+	\begin{remark}
+		Exercise 3.5.1 in the third edition of the text consists of three parts even though all are listed as
+		a single exercise.
+	\end{remark}
+
+	\begin{problem}[Exercise 3.5.1]
+		Let $x$ and $y$ be any two objects (possibly the same). We define $(x,y) \coloneqq  \{\{x\},\{x,y\}\}$. Which can be shown to be a set that exists using Axiom 3.4 and the Axiom of Union. Show that $(x,y)$ obeys the usual property we would expect of an ordered pair (i.e two ordered pairs are equal if and only if all their components are equal)
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		We shall show that for any objects $a,a',b\ \text{and}\  b'$ that $(a,b) = (a',b') \iff (a = a'\ \text{and}\ b = b')$.
+		$(\implies)$ Suppose that $(a,b) = (a',b')$ then by definition we have that $\{\{a\},\{a,b\}\} = \{\{a'\},\{a',b'\}\}$. We will first show that $a = a'$. Since $\{a\} \in \{\{a\},\{a,b\}\}$ we have $\{a\} = \{a'\}$ or $\{a\} = \{a',b'\}$. If $\{a\} = \{a'\}$ then we are done. On the other hand if $\{a\} \neq \{a'\}$ then we must have $\{a\} = \{a',b'\}$ which implies that $\{a\} = \{a'\}$. Therefore in either case $\{a\} = \{a'\}$. Now we show that $\{b\} = \{b'\}$. From our hypothesis we have that $\{a,b\} \in \{\{a'\},\{a',b'\}\}$ and thus that
+		$\{a,b\} = \{a'\}$ or $\{a,b\} = \{a',b'\}$. If $\{a,b\} = \{a'\}$ then $a = b = a'$. However $\{a',b'\} \in \{\{a\},\{a,b\}\}$ by our hypothesis so that $\{a',b'\} = \{a\}$ or $\{a',b'\} = \{a,b\}$ and in either case we have that $b' = b$. If on the other hand we have
+		$\{a,b\} \neq \{a'\}$ then we must have $\{a,b\} = \{a',b'\}$ which implies that $b' = a$ or $b = b'$. If $b = b'$ we are done so we  consider the case when $b' = a$. Since $\{a,b\} \in \{\{a'\},\{a',b'\}\}$ we have that 
+		$\{a,b\} = \{a'\}$ or $\{a,b\} = \{a',b'\}$ and in either case we have $b = b'$ since $a = a' = b'$.
+		\linebreak
+		
+		\noindent $(\impliedby)$ The converse is trivial
+	\end{proof}
+	\lined
 
 
 
