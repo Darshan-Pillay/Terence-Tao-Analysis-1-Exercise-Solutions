@@ -77,7 +77,7 @@
 		a single exercise.
 	\end{remark}
 
-	\begin{problem}[Exercise 3.5.1]
+	\begin{problem}[Exercise 3.5.1 (a)]
 		Let $x$ and $y$ be any two objects (possibly the same). We define $(x,y) \coloneqq  \{\{x\},\{x,y\}\}$. Which can be shown to be a set that exists using Axiom 3.4 and the Axiom of Union. Show that $(x,y)$ obeys the usual property we would expect of an ordered pair (i.e two ordered pairs are equal if and only if all their components are equal)
 	\end{problem}
 
@@ -91,6 +91,27 @@
 		\linebreak
 		
 		\noindent $(\impliedby)$ The converse is trivial
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{remark}
+		We will appeal to the previous part of this exercise (i.e we will use the result and definition of ordered pair in part a). The proof
+		we will provide is similar to that of Exercise 3.4.7. 
+	\end{remark}
+
+	\begin{problem}[Exercise 3.5.1 (b)]
+		Let $X$ and $Y$ be two sets. Show that the Cartesian Product of $X$ and $Y$ is a set (i.e that a set containing
+		all ordered pairs whose first component is from $X$ and second is from $Y$ exists)
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		For each $x \in X$ and any object $S$ define $P(x,S)$ to be the statement $S$ is a set such that for all objects $z$ we have
+		$z \in S \iff z = \{\{x\},\{x,y\}\}$ for some $y \in Y$. For each $x \in X$ there is at most one set $S$ such that $P(x,S)$ is true. Thus by the Axiom of Replacement there is a set $\{S:P(x,S)\ \text{is true for some}\ x \in X\}$. By the Axiom of 
+		Union we have that $Q \coloneqq \bigcup (\{S:P(x,S)\ \text{is true for some}\ x \in X\})$ is a set. We claim that every element of $Q$ is an ordered pair $(x,y)$ where $x \in X$ and $y \in Y$ and that every such ordered pair is in $Q$. First suppose that $z \in Q$ then $z \in T$ for some $T \in \{S:P(x,S)\ \text{is true for some}\ x \in X\}$. But then for this $T$ there exists some $x \in X$ such that for every object $q$ we have $q \in T$ if and only if $q = \{\{x\},\{x,y\}\}$ for some $y \in Y$. Thus we have $z = \{\{x\},\{x,y\}\}$ for some $x \in X$ and $y \in Y$ but by definition of an ordered pair for this $x$ and $y$ we have $(x,y) = \{\{x\},\{x,y\}\} = z$ thus every element of $Q$ is an ordered pair $(x,y)$ where $x \in X$ and $y \in Y$. Now suppose that $(x',y')$ is an ordered pair with $x' \in X$ and $y' \in Y$. For each $y \in Y$ and any object $q$ define $P'(y,q)$ to be the statement $q = \{\{x'\},\{x',y\}\}$. For each $y \in Y$ there is at most one object $q$ such that $P'(y,q)$ is true. Thus be the Axiom of Replacement there is a set $T \coloneqq \{q:P'(y,q)\ \text{is true for some}\ y \in Y\}$. Observe then that $P(x',T)$ is true thus $T \in \{S:P(x,S)\ \text{is true for some}\ x \in X\}$. Moreover $(x',y') = \{\{x'\},\{x',y'\}\} \in T$ thus $(x',y') \in Q$. The result follows as desired.
+		 
 	\end{proof}
 	\lined
 
