@@ -17,6 +17,31 @@
 \begin{document}
 	\maketitle
 	
+	\begin{remark}
+		In the text Tao informally gives a way to resolve Russell's paradox. He describes that objects are arranged (at least in set theory)
+		in an hierarchy. At the first rung you have (impure set theory) what are called primitive objects which are not sets. At the next 
+		rung you have sets which only contain primitive objects. The rung after that has sets which only contain primitive objects or sets containing only primitive objects and so on. From this you see that if you are on a rung of the hierarchy not at the primitive object level then all sets at that level can only contain objects below it on the hierarchy. So things like a set containing itself
+		cant be true because that set is on the same rung as itself. That is the intuition for the Axiom of Regularity and the problem below.
+	\end{remark}
+	
+	\begin{problem}[Exercise 3.2.2]
+		Let $A$ be a set. Show that $A \notin A$. Moreover show that for any two sets $A$ and $B$ that $B \notin A$ or $A \notin B$ (or both).
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		We shall prove the first part that is no set contains itself. If $A$ is the empty set then we are done. Suppose now then that $A$
+		is non-empty and for contradiction that $A \in A$. Using the singleton set axiom we have the singleton set $\{A\}$ exists. However if $A \in A$ then $A\ in \{A\}$ but $A$ is a set that is not disjoint from $\{A\}$  contradicting the Axiom of Regularity thus for any set $A$ we have $A \notin A$.
+		\linebreak
+		
+		\noindent We now prove the second part. Let $A$ and $B$ be two sets. If $A = B$ then from the first part we have that
+		 $B \notin A$ and $A \notin B$ and we see the result is true in this case. Moreover if $A$ or $B$ are the empty set then the result follows. Thus we suppose that $A$ and $B$ are two non-empty and non-equal sets. Suppose for contradiction that 
+		 $A \in B$ and $B \in A$. Using the pair set axiom we can construct the pair set $\{A,B\}$ which is a non-empty set that only contains $A$ and$B$. That is for all objects $z$ we have $z \in \{A,B\}$ if and only if $z = A$ or $z = B$. In either case we have that $z \cap \{A,B\} \neq \emptyset$ this $\{A,B\}$ is a non-empty that only contains sets that are not disjoint from itself. This contradicts the Axiom of Regularity thus we must have $A \notin B$ or $B \notin A$. The result follows as desired.
+	\end{proof}
+	\lined
+	
+	\newpage
+	
 	\begin{problem}[Exercise 3.4.6]
 			Let $X$ be a set. Show that the collection of all subsets of $X$ is a set.
 	\end{problem}
@@ -112,6 +137,19 @@
 		$z \in S \iff z = \{\{x\},\{x,y\}\}$ for some $y \in Y$. For each $x \in X$ there is at most one set $S$ such that $P(x,S)$ is true. Thus by the Axiom of Replacement there is a set $\{S:P(x,S)\ \text{is true for some}\ x \in X\}$. By the Axiom of 
 		Union we have that $Q \coloneqq \bigcup (\{S:P(x,S)\ \text{is true for some}\ x \in X\})$ is a set. We claim that every element of $Q$ is an ordered pair $(x,y)$ where $x \in X$ and $y \in Y$ and that every such ordered pair is in $Q$. First suppose that $z \in Q$ then $z \in T$ for some $T \in \{S:P(x,S)\ \text{is true for some}\ x \in X\}$. But then for this $T$ there exists some $x \in X$ such that for every object $q$ we have $q \in T$ if and only if $q = \{\{x\},\{x,y\}\}$ for some $y \in Y$. Thus we have $z = \{\{x\},\{x,y\}\}$ for some $x \in X$ and $y \in Y$ but by definition of an ordered pair for this $x$ and $y$ we have $(x,y) = \{\{x\},\{x,y\}\} = z$ thus every element of $Q$ is an ordered pair $(x,y)$ where $x \in X$ and $y \in Y$. Now suppose that $(x',y')$ is an ordered pair with $x' \in X$ and $y' \in Y$. For each $y \in Y$ and any object $q$ define $P'(y,q)$ to be the statement $q = \{\{x'\},\{x',y\}\}$. For each $y \in Y$ there is at most one object $q$ such that $P'(y,q)$ is true. Thus be the Axiom of Replacement there is a set $T \coloneqq \{q:P'(y,q)\ \text{is true for some}\ y \in Y\}$. Observe then that $P(x',T)$ is true thus $T \in \{S:P(x,S)\ \text{is true for some}\ x \in X\}$. Moreover $(x',y') = \{\{x'\},\{x',y'\}\} \in T$ thus $(x',y') \in Q$. The result follows as desired.
 		 
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.1 (c)]
+		Show that for any two objects $x$ and $y$ (possibly the same) that $(x,y) \coloneqq \{x\{x,y\}\}$ can also be used as
+		an alternative definition for an ordered pair
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		content...
 	\end{proof}
 	\lined
 
