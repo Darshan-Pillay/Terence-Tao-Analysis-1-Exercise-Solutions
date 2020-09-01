@@ -2,6 +2,7 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{fullpage}
+\usepackage{amsfonts}
 
 \newcommand{\lined}{\noindent\rule{\textwidth}{1pt}}
 \newtheorem*{problem}{Problem}
@@ -160,6 +161,31 @@
 		$a \in a'$ and $a' \in a$  contradicting Exercise 3.2.2. Thus our initial assumption was false and we must have $a = a'$.  Now we shall show that $b = b'$. By assumption we have $\{a,b\} \in \{a',\{a',b'\}\}$ so that $a' = \{a,b\}$ or $\{a',b'\} = \{a,b\}$. We have that $\{a,b\} \neq a'$ since otherwise we shall have $a = \{a,b\}$ as a direct consequence of the fact $a = a'$ which we have shown already. However then we have that $a \in a$ contradicting the fact that for any set $A$ we must have $A \notin A$ (see Exercise 3.2.2). Therefore $\{a,b\} \neq a'$ but then $\{a,b\} = \{a',b'\}$. We see then that $b = a'$ or $b = b'$. If $b = b'$ we have nothing to show and if that is not the case then $b = a'$ but $b' = a$ and $a = a'$ thus $b = b'$. In either case we have $b = b'$ as desired.
 		\linebreak
 		\noindent ($\impliedby$) The converse is trivial. 
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{remark}
+		Before we provide a solution for Exercise 3.5.2 we will discuss shortly empty functions. A empty function to an arbitrary set $X$ is defined to be a function $f:\emptyset \rightarrow X$ whose domain is the empty set and range is $X$. In the text Tao states that given any arbitrary set $X$ there is exactly one empty function to $X$. We will not concern ourselves with the general case but rather with the specific case when $X$ is the empty set. Note that in this case we immediately have that $f:\emptyset \rightarrow \emptyset$ is a function no matter how we define $f$. Since for each $x \in \emptyset$ we have exactly one $y \in \emptyset$ assigned to $x$ (this is vacuously true). So we do not need to specify what $f$ does. Furthermore any other function from $g:\emptyset \rightarrow \emptyset$ will be equal to $f:\emptyset \rightarrow \emptyset$ since their domains and ranges are the empty set and for each $x \in \emptyset$ we have $f(x) = g(x)$ vacuously. Thus $f:\emptyset \rightarrow \emptyset$ is the unique empty function to the empty set. Note that this $f$ is also surjective (vacuously again) and as you'll see when a definition for an ordered n-tuple is given in Exercise 3.5.2 that this $f$ is the only 0-tuple with respect to that given definition. Thus we are justified in calling $f$ the 0-tuple or the empty tuple which we will denote as $( )$.
+	\end{remark}
+
+
+	\begin{problem}[Exercise 3.5.2 (a)]
+		Let $n$ be a natural number. Suppose we define an ordered n-tuple to be a surjective function $x:\{i \in \mathbb{N}:1 \leq i \leq n\} \rightarrow X$ where $X$ is an arbitrary set (different n-tuples are allowed to have different ranges). We define the $i$-th component of $x$ denoted by $x_i$ to be $x(i)$, and we also denote $x$ as $(x_i)_{1 \leq i \leq n}$. Show that for two ordered $n$-tuples $x$ and $y$ that $(x_i)_{1 \leq i \leq n} = (y_i)_{1 \leq i \leq n}$ if and only if $x(i) = y(i)$ for $1 \leq i \leq n$.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		We first consider the special case when $n = 0$. A $0$-tuple is a surjective function $x:\{i \in \mathbb{N}:1 \leq i \leq 0\} 
+		\rightarrow X$. However $\{i \in \mathbb{N}:1 \leq i \leq 0\} = \emptyset$. Thus $x$ must be an empty function to some set $X$.
+		$x$ cannot be surjective unless $X$ is the empty set thus any $0$-tuple must an empty function to the empty set. However from our previous discussion we know that there is exactly one function from the empty set to the empty set so we have exactly
+		one $0$-tuple. So the result is true when $n = 0$. We now suppose that $n \geq 1$. Let $x$ and $y$ be two ordered $n$-tuples. ($\implies$) Suppose that $(x_i)_{1 \leq i \leq n}$ = $(y_i)_{1 \leq i \leq n}$. Then since $x$ and $y$ are equal functions they have the same domain $\{i \in \mathbb{N}:1\leq i \leq n\}$ and range $X$ such that for each $i \in \{i \in \mathbb{N}:1 \leq i \leq n\}$ we have $x(i) = y(i)$. Let $i$ be a natural number between $1$ and $n$, then $i \in \{i \in \mathbb{N}:1 \leq i \leq n\}$  thus $x(i) = y(i)$ for all $1 \leq i \leq n$.
+		\linebreak
+		
+		\noindent ($\impliedby$) Suppose that $x$ are $y$ are two ordered $n$-tuples such that $x(i) = y(i)$ for all $1 \leq i \leq n$. Since they both have the same domain $\{i \in \mathbb{N}:1 \leq i \leq n\}$, we need to show that they have the same range and that they agree for all elements in their shared domain. Let $X$ and $X'$ denote the range of $x$ and $y$ respectively. Suppose that $z$ is an arbitrary element of $X$, then since $x$ is surjective there is some $i$ in $\{i \in \mathbb{N}:1 \leq i \leq n\}$
+		such that $z = x(i)$ however $i$ is an integer between $1$ and $n$ thus by assumption we have $x(i) = y(i)$ and thus $z \in X'$.
+		Using the same argument but with the roles of $X$ and $X'$ swapped and the roles of $x$ and $y$ swapped we have that if $z$ is an element of $X'$ then $z$ is also an element of $X$. Therefore $X$ and $X'$ are equal thus $x$ and $y$ have the same range. Let $i \in \{i \in \mathbb{N}:1 \leq i \leq n\}$ then $i$ is an integer between $1$ and $n$ thus by assumption $x(i) = y(i)$. The result follows as desired.
 	\end{proof}
 	\lined
 
