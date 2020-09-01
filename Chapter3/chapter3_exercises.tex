@@ -104,7 +104,7 @@
 	\end{remark}
 
 	\begin{problem}[Exercise 3.5.1 (a)]
-		Let $x$ and $y$ be any two objects (possibly the same). We define $(x,y) \coloneqq  \{\{x\},\{x,y\}\}$. Which can be shown to be a set that exists using Axiom 3.4 and the Axiom of Union. Show that $(x,y)$ obeys the usual property we would expect of an ordered pair (i.e two ordered pairs are equal if and only if all their components are equal)
+		Let $x$ and $y$ be any two objects (possibly the same). We define $(x,y) \coloneqq  \{\{x\},\{x,y\}\}$. Which can be shown to be a set that exists using Axiom 3.4 and the Axiom of Union. Show that $(x,y)$ obeys the usual property we would expect of an ordered pair (i.e two ordered pairs are equal if and only if all their components are equal).
 	\end{problem}
 
 	\lined
@@ -129,7 +129,7 @@
 
 	\begin{problem}[Exercise 3.5.1 (b)]
 		Let $X$ and $Y$ be two sets. Show that the Cartesian Product of $X$ and $Y$ is a set (i.e that a set containing
-		all ordered pairs whose first component is from $X$ and second is from $Y$ exists)
+		all ordered pairs whose first component is from $X$ and second is from $Y$ exists).
 	\end{problem}
 
 	\lined
@@ -143,16 +143,23 @@
 	
 	\newpage
 	
+	\begin{remark}
+		See the texts definition for an ordered pair and observe we do not assert that an ordered pair is a set. However if we take the definition of an ordered set as it is in the exercise below it satisfies the property of what we would expect an ordered pair to have (i.e that two ordered pairs are equal if and only if their first and second components are the same).
+	\end{remark}
+	
 	\begin{problem}[Exercise 3.5.1 (c)]
 		Show that for any two objects $x$ and $y$ (possibly the same) that $(x,y) \coloneqq \{x,\{x,y\}\}$ can also be used as
-		an alternative definition for an ordered pair
+		an alternative definition for an ordered pair.
 	\end{problem}
 
 	\lined
 	\begin{proof}
 		We shall show that for any objects $a,a',b$ and $b'$ that $\{a,\{a,b\}\} = \{a',\{a',b'\}\}$ if and only if $a = a'$ and
-		$b = b'$. ($\implies$) Suppose that  $\{a,\{a,b\}\} = \{a',\{a',b'\}\}$. We shall first show that $a = a'$. By assumption we have
-		$a \in \{a',\{a',b'\}\}$ thus $a = a'$ or $a = \{a',\{a',b'\}\}$. Suppose for contradiction that $a \neq a'$ then  $a = \{a',\{a',b'\}\}$ and  $a' = \{a,\{a,b\}\}$. We see then that $a' \in a$ and $a \in a'$ which contradicts Exercise 3.2.2 which in particular means that our assumption $a \neq a'$  is false thus we have $a = a'$. We now show that $b = b'$
+		$b = b'$. ($\implies$) Suppose that  $\{a,\{a,b\}\} = \{a',\{a',b'\}\}$. We shall first show that $a = a'$. Suppose for contradiction
+		that $a \neq a'$ then we must have that $a = \{a',b'\}$ and $a' = \{a,b\}$. However in this situation we will then have that
+		$a \in a'$ and $a' \in a$  contradicting Exercise 3.2.2. Thus our initial assumption was false and we must have $a = a'$.  Now we shall show that $b = b'$. By assumption we have $\{a,b\} \in \{a',\{a',b'\}\}$ so that $a' = \{a,b\}$ or $\{a',b'\} = \{a,b\}$. We have that $\{a,b\} \neq a'$ since otherwise we shall have $a = \{a,b\}$ as a direct consequence of the fact $a = a'$ which we have shown already. However then we have that $a \in a$ contradicting the fact that for any set $A$ we must have $A \notin A$ (see Exercise 3.2.2). Therefore $\{a,b\} \neq a'$ but then $\{a,b\} = \{a',b'\}$. We see then that $b = a'$ or $b = b'$. If $b = b'$ we have nothing to show and if that is not the case then $b = a'$ but $b' = a$ and $a = a'$ thus $b = b'$. In either case we have $b = b'$ as desired.
+		\linebreak
+		\noindent ($\impliedby$) The converse is trivial. 
 	\end{proof}
 	\lined
 
