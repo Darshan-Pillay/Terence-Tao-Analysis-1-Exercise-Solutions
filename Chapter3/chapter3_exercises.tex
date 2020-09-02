@@ -326,5 +326,24 @@
 		$(A \times B) \backslash (C \times D) = (A \backslash C) \times (B \backslash D)$ is not true. 
 	\end{disproof}
 	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.6]
+		Let $A,B,C,D$ be non-empty sets. Show that $A \times B \subseteq C \times D$ if and only if $A \subseteq C$ and $B \subseteq
+		D$.
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		($implies$) Suppose $A \times B \subseteq C \times D$. Let $a$ be an arbitrary element of $A$. Since $B$ is non-empty by lemma 3.1.5 there is an object $b$ contained in $B$. We can construct the ordered pair $(a,b)$ which will be contained in 
+		$A \times B$ and hence by assumption also in $C \times D$ but then $a$ must be contained in $C$ and therefore $A \subseteq C$. A similar argument shows that $B \subseteq D$. ($\impliedby$) Suppose that $A \subseteq C$ and $B \subseteq
+		D$. Let $z$ be an arbitrary element $A \times B$ then $z$ is an ordered pair $(x,y)$ with $x \in A$ and $y \in B$ but by assumption we have then $x \in C$ and $y \in D$ thus $z \in C \times D$ and the result follows as desired.
+	\end{proof}
+	\lined
+	
+	\begin{remark}
+		The second part of the question in the text asks what happens when the hypotheses that $A,B,C,D$ are all non-empty is dropped. In general then the assertion breaks. In particular the forward implication is not generally true. For example suppose that $A$ is the empty set then $A \times B = \emptyset \subseteq C \times D$ and $A \subseteq C$ for any set $C$. The breaking point is that $B$ need not be subset of $D$. Simply set $B \coloneqq \{1\}$ and $D \coloneqq \{2,3\}$ and we have a counterexample. Thus the requirement that all the sets be non-empty for the forward implication is necessary. Now let us consider the converse where we suppose that $A \subseteq C$ and $B \subseteq D$ and that at least one of the sets are empty.  We can't have $A$ and $B$ both non-empty since we assumed at least one of $A,B,C,D$ are empty thus either $C$ or $D$ is empty but if $C$ is empty then $A$ is empty and if $D$ is empty then $B$ is empty and we have a contradiction in either case thus $A$ or $B$ is empty. If this is the case then the result still holds since we have $A \times B = \emptyset \subseteq C \times D$. Thus for the converse statement we may drop the condition that all of the sets must be non-empty. 
+	\end{remark}
 
 \end{document}
