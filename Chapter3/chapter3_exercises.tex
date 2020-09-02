@@ -6,6 +6,7 @@
 
 \newcommand{\lined}{\noindent\rule{\textwidth}{1pt}}
 \newtheorem*{problem}{Problem}
+\newtheorem*{disproof}{\emph{Disproof}}
 \newtheorem*{remark}{Remark}
 
 
@@ -188,9 +189,142 @@
 		Using the same argument but with the roles of $X$ and $X'$ swapped and the roles of $x$ and $y$ swapped we have that if $z$ is an element of $X'$ then $z$ is also an element of $X$. Therefore $X$ and $X'$ are equal thus $x$ and $y$ have the same range. Let $i \in \{i \in \mathbb{N}:1 \leq i \leq n\}$ then $i$ is an integer between $1$ and $n$ thus by assumption $x(i) = y(i)$. The result follows as desired.
 	\end{proof}
 	\lined
-
-
-
 	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.2 (b)]
+		Using the definition of an $n$-tuple in part (a) show that if $(X_i)_{1 \leq i \leq n}$ is an ordered $n$-tuple then 
+		$\prod_{1 \leq i \leq n} X_i$ is a set (satisfying our definition in the text).
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		Suppose that $(X_i)_{1 \leq i \leq n}$ is an ordered $n$-tuple. Then we have that $(X_i)_{1 \leq i \leq n}$ is a surjective function
+		from $\{i \in \mathbb{N}:1\leq i \leq n\}$ to some set of sets $T$. Appealing to the Axiom of Union we have that the set 
+		$\bigcup T$ exists. Then using the result we proved in Exercise 3.4.7 the collection of all partial functions from $\{i \in \mathbb{N}:1\leq i \leq n\}$ to $\bigcup T$ is a set which we shall denote as $P$. For each $x$ in $P$ define $P'(x)$ to be the statement $x$ is surjective with domain $\{i \in \mathbb{N}:1\leq i \leq n\}$ and range $T' \subseteq \bigcup T$ such that for each $i$ in $\{i \in \mathbb{N}:1\leq i \leq n\}$ we have $x(i) \in X_i$. Then the Axiom of Specification gives us the set 
+		$\prod_{1 \leq i \leq n} X_i \coloneqq \{x:P'(x)\ \text{is true}\}$. We claim that every every ordered $n$-tuple $(x_i)_{1 \leq i \leq n}$
+		where $x_i \in X_i$ for $1 \leq i \leq n$ is in $\prod_{1 \leq i \leq n} X_i$ and that every element of $\prod_{1 \leq i \leq n} X_i$ is such an $n$-tuple. Let $z$ be an arbitrary element of $\prod_{1 \leq i \leq n} X_i$ then $z \in P$ and $P'(z)$ is true. That implies that $z$ is a surjective function with domain $\{i \in \mathbb{N}:1\leq i \leq n\}$ and range $T' \subseteq \bigcup T$ such that for each $i$ in $\{i \in \mathbb{N}:1\leq i \leq n\}$ we have $z(i) \in X_i$. But then $z$ is precisely an ordered $n$-tuple such that 
+		$x_i \in X_i$ for $1 \leq i \leq n$. Now suppose that $(x_i)_{1 \leq i \leq n}$ is an ordered $n$-tuple such that $x_i \in X_i$ for $1 \leq i \leq n$. We note that $(x_i)_{1 \leq i \leq n}$ has domain $\{i \in \mathbb{N}:1\leq i \leq n\}$ and set $T'$ as its range. We claim that $T' \subseteq \bigcup T$. Let $t \in T'$ then since $x$ is surjective we have some $i \in \{i \in \mathbb{N}:1\leq i \leq n\}$
+		such that $t = x_i$ however $x_i \in X_i$ thus $t \in \bigcup T$ and therefore $T' \subseteq \bigcup T$. We have thus shown $(x_i)_{1 \leq i \leq n} \in P$ and we also have $P'(x)$ is true thus $(x_i)_{1 \leq i \leq n} \in \prod_{1 \leq i \leq n} X_i$. The result follows as required.
+	\end{proof}
+	\lined
+
+
+	\newpage
+	
+	\begin{remark}
+		In the following two exercises we have to assume that the objects of our ordered $n$-tuples and ordered pairs
+		obey the axioms of transitivity, reflexivity and symmetry.  
+	\end{remark}
+	
+	\begin{problem}[Exercise 3.5.3 (a)]
+		Show that the definition of an ordered pair obeys the reflexivity, symmetry and transitivity axioms.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		(Reflexivity) Let $(a,b)$, $(a',b')$ and $(x,y)$ be ordered pairs. Then applying the axioms of equality directly to the objects $a$ and $b$ we have $a = a$ and $b = b$ thus $(a,b) = (a,b)$. (Symmetry) Suppose that $(a,b) = (a',b')$ then $a = a'$ and $b = b'$ but applying the axioms of equality directly to the objects $a,a',b$ and $b'$ we have $a' = a$ and $b' = b$ whence 
+		$(a',b') = (a,b)$. (Transitivity) Suppose $(a,b) = (a',b')$ and $(a',b') = (x,y)$. Then we have $a = a'$ and $a' = x$. Applying the axioms of equality directly to these objects we have $a = x$. A similar argument shows that $b = y$ thus $(a,b) = (x,y)$. The result follows as desired.
+		
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.3 (b)]
+		Show that the definition of ordered $n$-tuples obeys the reflexivity, symmetry and transitivity axioms.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		Very similar to the proof of part (a)
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.4 (a)]
+		Let $A,B$ and $C$ be sets. Show that $A \times (B \cup C) = (A \times B) \cup (A \times C)$.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		Let $z$ be an arbitrary element of $A \times (B \cup C)$ then $z$ is an ordered pair $(x,y)$ with $x \in A$ and 
+		$y \in B \cup C$. We have that $y \in B$ or $y \in C$. In either situation $y \in B$ or $y \notin B$ we have that $z \in 
+		(A \times B) \cup (A \times C)$. Therefore $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$. Now suppose that $z$ is an arbitrary element of  $(A \times B) \cup (A \times C)$ then $z \in A \times B$ or $z \in A \times C$. If $z \in A \times B$ or $z \notin A \times B$  then $z \in A \times (B \cup C)$. Thus $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$. The result follows as desired.
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.4 (b)]
+		Let $A,B$ and $C$ be sets. Show that $A \times (B \cap C) = (A \times B) \cap (A \times C)$.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		Let $z$ be an arbitrary element of $A \times (B \cap C)$ then $z$ is an ordered pair $(x,y)$ where $x \in A$ and 
+		$y \in B \cap C$. Which implies that $z \in (A \times B) \cap (A \times C)$. Now suppose that $z$ is an element of
+		$(A \times B) \cap (A \times C)$ then we have $z$ is an ordered pair $(x,y)$ with $x$ in $A$ and $y \in B \cap C$ which implies that $z \in A \times (B \cap C)$ and the result follows as desired.
+	\end{proof}
+	\lined
+	
+	\newpage 
+	
+	\begin{problem}[Exercise 3.5.4 (c)]
+		Let $A,B$ and $C$ be sets. Show that $A \times (B \backslash C) = (A \times B) \backslash (A \times C)$.
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		Let $z$ be an arbitrary element of $A \times (B \backslash C)$ then $z$ is an ordered pair $(x,y)$ with $x \in A$ but
+		$y \in B$ and $y \notin C$. Thus $z \in A \times B$ but $z$ is not in $A \times C$ so $z \in (A \times B) \backslash (A \times C)$.
+		Now suppose that $z$ is an arbitrary element of $(A \times B) \backslash (A \times C)$. Then $z$ is an ordered pair $(x,y)$ in 
+		$A \times B$ but not in $A \times C$. However since $z \notin A \times C$ and $x \in A$ we must have that $y \notin C$. 
+		Therefore $y \in B \backslash C$ so $z \in A \times (B \backslash C)$. The result follows as desired.
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.5 (a)]
+		Let $A,B,C,$ and $D$ be sets. Show that $(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$.
+	\end{problem}
+	
+	
+	\lined
+	\begin{proof}
+		Let $z$ be an element of $(A \times B) \cap (C \times D)$ then $z$ is an ordered pair $(x,y)$ such that 
+		$x \in A$ and $x \in C$ and $y \in B$ and $y \in D$. However then $z$ is in $(A \cap C) \times (B \cap D)$.  Now
+		suppose that $z$ is an element of $(A \cap C) \times (B \cap D)$ then $z$ is an ordered pair $(x,y)$ such that $x \in A \cap C$
+		and $y \in B \cap D$ which implies that $z \in A \times B$ and $z \in C \times D$. The result follows as desired.
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.5 (b)]
+		Let $A,B,C,$ and $D$ be sets. Prove or disprove that $(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)$.
+	\end{problem}
+	
+	\lined
+	\begin{disproof}
+		In general it is true that $(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)$. On the other hand we have that
+		$(A \cup C) \times (B \cup D) \subseteq (A \times B) \cup (C \times D)$ is not true in general.  We can obtain a counter example by setting $A \coloneqq \{1,2\}$, $B \coloneqq \{3,4\}$, $C \coloneqq \{5,6\}$, and $D \coloneqq \{7,8\}$. We observe that $(1,7) \in (A \cup C) \times (B \cup D)$ but  $(1,7) \notin (A \times B) \cup (C \times D)$. Therefore $(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)$ is not true in general.
+	\end{disproof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.5 (c)]
+		Let $A,B,C,$ and $D$ be sets. Prove or disprove that $(A \times B) \backslash (C \times D) = (A \backslash C) \times (B \backslash D)$.
+	\end{problem}
+
+	\lined
+	\begin{disproof}
+		In general we do have $(A \backslash C) \times (B \backslash D) \subseteq (A \times B) \backslash (C \times D)$ but in general we do not have $(A \times B) \backslash (C \times D) \subseteq (A \backslash C) \times (B \backslash D)$. We can obtain a counter example by setting $A \coloneqq \{1,2\}$, $B \coloneqq \{5,7\}$, $C \coloneqq \{1,3\}$, and $D \coloneqq \{6,9\}$. But then we have $(1,5) \in (A \times B) \backslash (C \times D)$ but $(1,5) \notin (A \backslash C) \times (B \backslash D)$. Thus in general
+		$(A \times B) \backslash (C \times D) = (A \backslash C) \times (B \backslash D)$ is not true. 
+	\end{disproof}
+	\lined
 
 \end{document}
