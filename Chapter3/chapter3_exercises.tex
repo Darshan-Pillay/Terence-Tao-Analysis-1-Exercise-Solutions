@@ -346,4 +346,30 @@
 		The second part of the question in the text asks what happens when the hypotheses that $A,B,C,D$ are all non-empty is dropped. In general then the assertion breaks. In particular the forward implication is not generally true. For example suppose that $A$ is the empty set then $A \times B = \emptyset \subseteq C \times D$ and $A \subseteq C$ for any set $C$. The breaking point is that $B$ need not be subset of $D$. Simply set $B \coloneqq \{1\}$ and $D \coloneqq \{2,3\}$ and we have a counterexample. Thus the requirement that all the sets be non-empty for the forward implication is necessary. Now let us consider the converse where we suppose that $A \subseteq C$ and $B \subseteq D$ and that at least one of the sets are empty.  We can't have $A$ and $B$ both non-empty since we assumed at least one of $A,B,C,D$ are empty thus either $C$ or $D$ is empty but if $C$ is empty then $A$ is empty and if $D$ is empty then $B$ is empty and we have a contradiction in either case thus $A$ or $B$ is empty. If this is the case then the result still holds since we have $A \times B = \emptyset \subseteq C \times D$. Thus for the converse statement we may drop the condition that all of the sets must be non-empty. 
 	\end{remark}
 
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.7]
+		Let $X,Y$ be sets, and let $\pi_{X \times Y \rightarrow X}:X \times Y \rightarrow X$ and $\pi_{X \times Y \rightarrow Y}:X \times Y \rightarrow Y$ be the maps $\pi_{X \times Y \rightarrow X}(x,y) \coloneqq x$ and $\pi_{X \times Y \rightarrow Y}(x,y) \coloneqq y$. These maps are know as the co-ordinate functions on $X \times Y$. Show that for any functions $f:Z \rightarrow X$ and $g:Z \times Y$, there exists a unique function $h:Z \rightarrow X \times Y$ such that  $\pi_{X \times Y \rightarrow X} \circ h = f$ and  $\pi_{X \times Y \rightarrow Y} \circ h = g$. The function $h$ is called the direct sum of $f$ and $g$ denoted $h = f \oplus g$
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		We shall show that there is at most one function such that $\pi_{X \times Y \rightarrow X} \circ h = f$ and  $\pi_{X \times Y \rightarrow Y} \circ h = g$. Suppose that $h:Z \rightarrow X \times Y$ and $h':Z \rightarrow X \times Y$ are functions such that satisfying our requirement. Let $z$ be an arbitrary element of $Z$. Note that $h(z)$ is an ordered pair $(x,y)$ in $X \times Y$ and that $h'(z)$ is also an ordered pair $(x',y')$ in $X \times Y$. We have $(\pi_{X \times Y \rightarrow X} \circ h)(z) = (\pi_{X \times Y \rightarrow X} \circ h')(z)$ but that implies $x = x'$. Similarly using the fact that $\pi_{X \times Y \rightarrow Y} \circ h = 
+		\pi_{X \times Y \rightarrow Y} \circ h'$ we have $y = y'$ and therefore we have $h(z) = h'(z)$ for all $z \in Z$. We have shown that there can be only at most one such function $h$ satisfying our conditions. We now proceed to show that there is at least such $h$. We define a function $h:Z \rightarrow X \times Y$ by $h(z) \coloneqq (f(z),g(z))$ for each $z \in Z$. Observe that
+		
+		\begin{equation*}
+			\begin{split}
+					(\pi_{X \times Y \rightarrow X} \circ h)(z) & = \pi_{X \times Y \rightarrow X}h(z) \\
+					& = \pi_{X \times Y \rightarrow X}(f(z),g(z)) \\
+					& = f(z)
+			\end{split}
+		\end{equation*}
+	
+		thus $\pi_{X \times Y \rightarrow X} \circ h = f$. A similar computation shows that $\pi_{X \times Y \rightarrow Y} \circ h = g$. 
+		The result follows as desired.
+		
+		
+	\end{proof}
+	\lined
+
 \end{document}
