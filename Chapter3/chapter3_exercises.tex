@@ -371,5 +371,39 @@
 		
 	\end{proof}
 	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.8]
+		Let $n$ be a positive natural number and $X_1 \cdots X_n$ be sets. Show that $\prod_{i=1}^{n}X_i$ is empty
+		if and only if at least one of the $X_i$ are empty.
+	\end{problem}
+
+	\lined
+	\begin{proof}
+		Suppose that $\prod_{i=1}^{n}X_i$ then appealing to lemma 3.5.12 we see that some $X_i$ must be empty. Now
+		suppose that $j$ is a natural number such that $1 \leq j \leq n$ and $X_j$ is empty. Suppose for contradiction that
+		$\prod_{i=1}^{n}X_i$ is non-empty then there is some ordered $n$-tuple $(x_i)_{1 \leq i \leq n}$ contained in $\prod_{i=1}^{n}X_i$.
+		We have that $x_i \in X_i$ for $1 \leq i \leq n$ and thus in particular we have $x_j \in X_j$ which contradicts the fact that 
+		$X_j$ is empty. Therefore $\prod_{i=1}^{n}X_i$ is empty and the result follows as desired.
+	\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.9]
+		Suppose that $I$ and $J$ are two sets and for all $\alpha \in I$ that we have a set $A_{\alpha}$ and for all $\beta \in J$ that we have a set $B_{\beta}$. Show that $(\bigcup_{\alpha \in I}A_{\alpha}) \bigcap (\bigcup_{\beta \in J}B_{\beta}) = 
+		\bigcup_{(\alpha,\beta) \in I \times J}(A_{\alpha} \cap B_{\beta})$.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+		Let $z$ be an arbitrary element of $(\bigcup_{\alpha \in I}A_{\alpha}) \bigcap (\bigcup_{\beta \in J}B_{\beta})$ then we have that 
+		$z$ is an element of $A_{\alpha}$ for some $\alpha \in I$ and that $z$ is also contained in $B_{\beta}$ for some $\beta$ in $J$ thus $z \in A_{\alpha} \cap B_{\beta}$ and $(\alpha,\beta) \in I \times J$ whence $z \in \bigcup_{(\alpha,\beta) \in I \times J}(A_{\alpha} \cap B_{\beta})$. Therefore we have $(\bigcup_{\alpha \in I}A_{\alpha}) \bigcap (\bigcup_{\beta \in J}B_{\beta}) \subseteq	\bigcup_{(\alpha,\beta) \in I \times J}(A_{\alpha} \cap B_{\beta})$. Now suppose that $z$ is an arbitrary element of
+		$\bigcup_{(\alpha,\beta) \in I \times J}(A_{\alpha} \cap B_{\beta})$ then $z \in S$ for some $(\alpha,\beta) \in I \times J$ such
+		that $S = A_{\alpha} \cap B_{\beta}$. We now see that $z \in \bigcup_{\alpha \in I} A_{\alpha}$ and that $z \in \bigcup_{\beta \in J} B_{\beta}$ thus $\bigcup_{(\alpha,\beta) \in I \times J}(A_{\alpha} \cap B_{\beta}) \subseteq (\bigcup_{\alpha \in I}A_{\alpha}) \bigcap (\bigcup_{\beta \in J}B_{\beta})$ and the result follows as desired.
+		
+	\end{proof}
+	\lined
 
 \end{document}

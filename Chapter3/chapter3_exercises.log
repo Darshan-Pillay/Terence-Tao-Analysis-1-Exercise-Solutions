@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  3 SEP 2020 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  3 SEP 2020 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -243,7 +243,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--186
 
  []
 
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
 (./chapter3_exercises.aux) ) 
 Here is how much of TeX's memory you used:
  2535 strings out of 480608
@@ -267,10 +267,10 @@ s/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
 m/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
-Output written on chapter3_exercises.pdf (18 pages, 180118 bytes).
+Output written on chapter3_exercises.pdf (20 pages, 186443 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
