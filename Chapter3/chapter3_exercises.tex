@@ -406,5 +406,43 @@
 	\end{proof}
 	\lined
 	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.10]
+		If $f:X \times Y$ is a function the graph of $f$ is the subset of $X \times Y$  defined by $(x,y) \in X \times Y: y = f(x)$
+	\end{problem}
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.10]
+		Let $f:X \times Y$ be a function. The graph of $f$
+		is the subset of $X \times Y$ defined by 
+		$\{(x,y) \in X \times Y:y = f(x)\}$. Show that for two 
+		two functions $f:X \times Y$ and $\tilde{f} \times Y
+		$ are equal if and only if they have the same graph.
+		Conversely show that if $G$ is a subset of $X \times Y$ such that for each $x \in X$ there is exactly one ordered pair in $G$ with first component $x$ then there is exactly one function from $X$ to $Y$ whose graph is $G$.
+	\end{problem}
+	
+	\lined
+		\begin{proof}
+			The proof is just a matter of unravelling the
+			definition of the graph of a function and is hence 
+			trivial. For the second part for each $x \in X$ define $f(x)$ to be the unique element in $Y$ such that
+			$(x,f(x)) \in G$. This defines a function from $X$ to $Y$ whose graph is $G$. From the first part we know that there can only be at most one such function and the result follows.
+		\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 3.5.11]
+		Show that the Power Set Axiom can be deduced from Lemma 3.4.10 and the other axioms of Set Theory. That is Lemma 3.4.10 can be used as an alternative formulation of the Power Set Axiom. 
+	\end{problem}
+	
+	\lined
+		\begin{proof}
+			We shall just provide a sketch solution. Let $X$ and $Y$ be sets. Consider the Cartesian Product $X \times Y$. Appealing to Lemma 3.4.10 we have the set of all subsets of $X \times Y$ denoted $2^{X \times Y}$. Apply the Axiom of Specification on $2^{X \times Y}$ to get the set of all subsets of $X \times Y$ which obey the vertical line test. Finally using the Axiom of Replacement and the last part of Exercise 3.5.10 we obtain a set containing all functions from $X$ to $Y$.
+		\end{proof}
+	\lined
+	
 
 \end{document}
