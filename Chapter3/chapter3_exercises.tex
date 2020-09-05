@@ -447,13 +447,13 @@
 	
 	\newpage
 	
-	\begin{problem}[Exercise 3.5.12 (a)]
+	\begin{problem}[Exercise 3.5.12]
 		Let $f:\mathbb{N} \times X \rightarrow X$ be a function from $\mathbb{N} \times X$ to $X$ where $X$ is an arbitrary non-empty set. Let $c$ be an arbitrary element of $X$. Then there exists a unique 	function $a:\mathbb{N} \rightarrow \mathbb{N}$ such that $a(0) = c$
 		and $a(n++) = f(n, a(n))$. 
 	\end{problem}
 	
 	\begin{remark}
-		Note that the recursive definitions proposition in chapter 2 of the text did not have a valid proof (hence why Tao marked it informal). In particular the proof assumed the fact that such a function $a$ exists to prove that the function $a$ exists which is circular! This exercise we explicitly show that this function exists rigorously and furthermore that is unique.
+		Note that the recursive definitions proposition in chapter 2 of the text did not have a valid proof (hence why Tao marked it informal). In particular the proof assumed the fact that such a function $a$ exists to prove that the function $a$ exists which is circular! This exercise we explicitly show that this function exists rigorously and furthermore that is unique. Tao poses an additional challenge to prove the result without using the ordering of the naturals but rather using just the Peano Axioms and the Set Theory developed thus far in chapter 3. We will not provide the proof in that manner since it is just a matter of induction and the only really interesting part of the challenge is that it is possible to define the set $\{n \mathbb{N}:n \leq N\}$ just using set theory and the Peano Axioms and using this to prove an alternate formulation of the Lemma 1 below. 
 	\end{remark}
 	
 	\begin{lemma}
@@ -463,7 +463,7 @@
 	\begin{proof}
 		We shall induct on $N$. For the base case when $N = 0$ define the function $a_{0}:\{n \in \mathbb{N}:n \leq 0\} \rightarrow \mathbb{N}$ such that $a_{0}(0) \coloneqq c$. The base case follows. Suppose inductively that the result is true for $N$ that is there is a unique function $a_{N}:\{n \in \mathbb{N}:n \leq N\} \rightarrow \mathbb{N}$
 		such that $a_{N}(0) = c$ and $a_{N}(n++) = f(n,a_{N}(n))$. We define  $a_{N++}:\{n \in \mathbb{N}:n \leq N++\} \rightarrow \mathbb{N}$ by $a_{N++}(0) \coloneqq c$. Now let $n$ be a natural number such that $n++ \leq N++$. If $n++ < N++$ define $a_{N++}(n++) \coloneqq
-		a_{N}(n++)$ otherwise if $n++ = N++$ then define  $a_{N++}(n++) \coloneqq a_{N++}(N++) \coloneqq f(N,a_{N}(N))$. We now show that $a_{N++}(n++) =  f(N,a_{N}(N))$ for all natural numbers $n$ such that $n < N++$. We have $n++ \leq N++$. If $n++ < N++$ then we have  $a_{N++}(n++) = a_{N}(n++) = f(n, a_{N}(n)) = f(n, a_{N++}(n)$. If on the other hand $n++ = N++$ then $a_{N++}(n++) = f(N, a_{N}(n))= f(N, a_{N++}(n))$ and our claim follows. We now show that $a_{N++}$ is the only function that has these properties. Suppose $g$ is another such function with the same domain such that $g(0) = c$ and
+		a_{N}(n++)$ otherwise if $n++ = N++$ then define  $a_{N++}(n++) \coloneqq a_{N++}(N++) \coloneqq f(N,a_{N}(N))$. We now show that $a_{N++}(n++) =  f(N,a_{N}(N))$ for all natural numbers $n$ such that $n < N++$. We have $n++ \leq N++$. If $n++ < N++$ then we have  $a_{N++}(n++) = a_{N}(n++) = f(n, a_{N}(n)) = f(n, a_{N++}(n))$. If on the other hand $n++ = N++$ then $a_{N++}(n++) = f(N, a_{N}(n))= f(N, a_{N++}(n))$ and our claim follows. We now show that $a_{N++}$ is the only function that has these properties. Suppose $g$ is another such function with the same domain such that $g(0) = c$ and
 		$g(n++) = f(n,g(n))$. If we look at the restriction of $g$ and $f$ to the domain $\{n \in \mathbb{N}:n \leq N\}$ then by the inductive hypothesis we have for all $n < N++$ that $g$ and $f$ agree. Now we compute $g(N++) = f(N, g(N)) = f(N, f(N)) = a_{N++}(N++)$ and the result follows as desired.
 	\end{proof}
 	
@@ -471,10 +471,25 @@
 	
 	\lined
 	\begin{proof}
-		We shall first suppose that we can only have one such function $a:\mathbb{n} \rightarrow \mathbb{N}$ such that $a(0) = c$ and for each natural number $n \in \mathbb{N}$ it is the case that $a(n++) = f(n,a(n))$. Suppose that there exists another such function $g:\mathbb{N} \rightarrow \mathbb{N}$ such that $g(0) = c$ and for each natural number $n \in \mathbb{N}$ it is the case that $g(n++) = f(n,g(n))$. We shall show that $g(n) = f(n)$ for all $n \in \mathbb{N}$ by inducting on $n$. The base case is trivial. Now suppose inductively that $f(n) = g(n)$. We now show that this is true for $n++$. Observe that $g(n++) = f(n,g(n))$ but by the inductive hypothesis we then have $f(n,g(n)) = f(n,f(n))$ which implies $g(n++) = f(n++)$ and this closes the induction. Therefore $f = g$ and thus there is at must one such function $f$ satisfying our conditions. Now we show there exists at least one such $f$. 
+		We shall first suppose that we can only have one such function $a:\mathbb{N} \rightarrow X$ such that $a(0) = c$ and for each natural number $n \in \mathbb{N}$ it is the case that $a(n++) = f(n,a(n))$. Suppose that there exists another such function $g:\mathbb{N} \rightarrow \mathbb{N}$ such that $g(0) = c$ and for each natural number $n \in \mathbb{N}$ it is the case that $g(n++) = f(n,g(n))$. We shall show that $g(n) = a(n)$ for all $n \in \mathbb{N}$ by inducting on $n$. The base case is trivial. Now suppose inductively that $a(n) = g(n)$. We now show that this is true for $n++$. Observe that $g(n++) = f(n,g(n))$ but by the inductive hypothesis we then have $f(n,g(n)) = f(n,a(n))$ which implies $g(n++) = a(n++)$ and this closes the induction. Therefore $a = g$ and thus there is at must one such function $a$ satisfying our conditions. Now we show there exists at least one such $a$. We define $a:\mathbb{N} \rightarrow \mathbb{N}$ by $a(0) \coloneqq c$ and for each natural number $n \in \mathbb{N}$ we appeal to Lemma 1 and define $a(n++) \coloneqq a_{n++}(n++)$. We claim that $a(n++) = f(n,a(n))$. We prove this by induction on $n$. For $n = 0$ we have that $a(0++) = a_{0++}(0++) = f(0, a_{0++}(0))
+		= f(0, c) = f(0, a(0))$ so the claim is true for the base case.
+		Now suppose inductively that the claim is true for $n$. Observe that by definition and from Lemma 1 we have $a((n++)++) = a_{(n++)++}((n++)++) = f(n++,a_{(n++)++}(n++)) = f(n++, a_{n++}(n++)) =
+		f(n, a(n++))$ which closes the induction. Therefore the claim is true and the result follows as desired.
+		
 	\end{proof}
 	
 	\lined
+	
+	\newpage
+	
+	\begin{remark}
+		The next exercise as Tao remarks shows there is essentially only
+		one set of natural numbers in set theory. The basic idea is if you have an alternative natural number set then we can label each alternative natural number with a natural number in such way that no two different alternative natural number will have the same label (i.e there is a bijection between the two sets). Furthermore the bijection preserves the successor structure. So alternative zero is labelled by normal zero, and 1' (alternative 1) is labelled 1, and 2' is labelled 2 and so on. 
+	\end{remark}
+	
+	\begin{problem}[Exercise 3.5.13]
+		
+	\end{problem}
 	
 	
 	
