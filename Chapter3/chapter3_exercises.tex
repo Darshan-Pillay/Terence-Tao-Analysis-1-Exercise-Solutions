@@ -488,8 +488,21 @@
 	\end{remark}
 	
 	\begin{problem}[Exercise 3.5.13]
-		
+		Suppose we have a set $\mathbb{N}'$ of ``alternative natural" numbers, an ``alternative  zero" $0'$, and an ``alternative increment"
+		operation  which takes any alternative natural number $n' \in \mathbb{N}'$ and returns another alternative natural number $n'++' \in \mathbb{N}'$, such that the Peano Axioms hold with the natural numbers, zero and increment operation replaced with their counterparts. Show that there exists a bijection $f:\mathbb{N} \rightarrow \mathbb{N}'$ such that $f(0) = 0'$ and for $n \in \mathbb{N}$ and $n' \in \mathbb{N}'$ we have $f(n) = n'$ if and only if $f(n++) = n'++'$.
 	\end{problem}
+	
+	\lined
+		\begin{proof}
+			Define the function $h: \mathbb{N} \times \mathbb{N}' \rightarrow \mathbb{N}'$ by 
+			$h(n, n') = n'++'$ for each $(n,n') \in \mathbb{N} \times \mathbb{N}'$. By Exercise 3.5.12 there exists a unique function 
+			$f:\mathbb{N} \rightarrow \mathbb{N}'$ such that $f(0) = 0'$ and for all natural numbers $n \mathbb{N}$ the fact $f(n++) = h(n,f(n))$. We claim that for $n \in \mathbb{N}$ and $n' \in \mathbb{N}'$ we have $f(n) = n'$ if and only if $f(n++) = n'++'$. Suppose that 
+			$f(n) = n'$. Observe that $f(n++) = h(n,f(n)) = h(n,n') = n'++'$ which shows the forward implication is true. Now suppose conversely that $f(n++) = n'++'$. We have that $f(n++) = h(n,f(n)) = f(n)++ = n'++'$ but the alternative naturals obey the Peano axioms with respect to alternative increment thus $f(n) = n'$ and our claim follows. All that remains is for us to show that $f$ is a bijection. Let $n' \in \mathbb{N}'$. We shall prove that $f$ is surjective by induction on $n'$. The base case is trivial. Suppose inductively that for $n'$ there exists a natural number $x$ such that $f(x) = n'$. But this implies that 
+			$f(x++) = n'++'$ and this closes the induction. Therefore we have that $f$ is surjective. Now let $n \in \mathbb{N}$ we shall by induction on $n$ that $f$ is injective. Suppose that $f(0) = f(m)$ for some natural number $m \in \mathbb{N}$. Suppose for contradiction that $m$ is not zero. Then there exists a unique natural number $b \in \mathbb{N}$ such that $m = b++$. Thus $f(0) = f(b++) = h(b,f(b)) = 
+			f(b)++'$. But then $0' = f(b)++'$ which is a contradiction. Therefore $m = 0$ and thus the claim that $f$ is injective is true for the base case. Suppose inductively that the claim is true for $n$ and that $f(n++) = f(m)$ for some natural $m \in \mathbb{N}$. Clearly $m$ cannot be $0$ therefore $m = b++$ for some natural number $b \in \mathbb{N}$. We then have $f(n++) = h(n,f(n)) = f(n)++ = f(b++) = 
+			h(b,f(b)) = f(b)++$  which implies that $f(n) = f(b)$ and hence by the inductive hypothesis $n = b$ which furthermore implies that $n++ = b++ = m$. This closes the induction. Therefore $f$ is injective and the result follows as desired. 
+		\end{proof}
+	\lined
 	
 	
 	
