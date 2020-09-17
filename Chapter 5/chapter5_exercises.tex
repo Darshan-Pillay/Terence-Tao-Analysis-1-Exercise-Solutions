@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+
+\newcommand{\lined}{\noindent\rule{\textwidth}{1pt}}
+\newtheorem*{problem}{Problem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{disproof}{\emph{Disproof}}
+\newtheorem*{remark}{Remark}
+
+
+
+
+
+\title{\huge Analysis 1: Chapter 5 \\ \LARGE {The Real Numbers}}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\begin{remark}
+		A common problem solving technique we'll see again and again is to start with the conclusion and work backwards to a point that we can conclude from our hypothesis. The solution to the problem below was obtained in this manner (try it!).
+	\end{remark}
+	
+	\begin{problem}
+		The sequence $(a_n)_{n = 1}^{\infty}$ defined by $a_n \coloneqq \frac{1}{n}$ is a cauchy sequence.
+	\end{problem}
+	
+	\lined
+		\begin{proof}
+			Given a positive $\epsilon > 0$ we have that there exists a natural number $N$ such that $\frac{1}{\epsilon} \leq N$ which implies that $\epsilon \geq \frac{1}{N}$ and for all $j,k \geq N$ we have that $\lvert \frac{1}{j} - \frac{1}{k}\rvert \leq \frac{1}{N}$ and the result follows as desired.
+		\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 5.1.1]
+		Every cauchy sequence is bounded.
+	\end{problem}
+	
+	\lined
+		\begin{proof}
+		 Let $(a_n)_{n = 1}^{\infty}$ be a cauchy sequence. We have then that 	$(a_n)_{n}^{\infty}$ is eventually $1$-steady that is there exists 
+		 a $N \geq 1$ such that for all $j,k$ we have $\lvert a_j - a_k \rvert\leq 1$. We can then split $(a_n)_{n = 1}^{\infty}$ into two parts $(a'_i)_{i = 1}^{N - 1}$ and $(b_n')_{n' = N}^{\infty}$. Observe that $(a'_i)_{i = 1}^{N - 1}$ is finite so it is bounded that is there exists some $M \geq 0$ such that $M \geq \lvert a_i \rvert$
+for all $1 \leq i \leq N - 1$.  We also have that $(b_n')_{n' = N}^{\infty}$ is bounded since for $j \geq N$ we have that $\lvert b_j - b_N + b_N \rvert \leq  \lvert b_j - b_N \rvert + \lvert b_N \rvert \leq 1 + \lvert b_N \rvert$. Take the max of $1 + \lvert b_N \rvert$ and $M$ and the result follows.
+		\end{proof}
+	\lined
+	
+\end{document}
