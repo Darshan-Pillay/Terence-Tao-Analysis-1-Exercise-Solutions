@@ -65,7 +65,21 @@ We define $N \coloneqq max(N_1, N_2)$ and appealing to the triangle inequality w
 		 \\ & \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon
 	\end{align*}
 	
-	\noindent which shows that $(b_n)_{n = 1}^{\infty}$ is cauchy as desired.
+	\noindent which shows that $(b_n)_{n = 1}^{\infty}$ is cauchy as desired. The argument with the roles of $(a_n)_{n = 1}^{\infty}$ and  $(b_n)_{n = 1}^{\infty}$ swapped shows that $(a_n)_{n = 1}^{\infty}$ is bounded if $(b_n)_{n = 1}^{\infty}$ is bounded. The result follows.
+		\end{proof}
+	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 5.2.2]
+		Let $\epsilon$ be a positive rational. Suppose that $(a_n)_{n = 1}^{\infty}$ and  $(b_n)_{n = 1}^{\infty}$ are two sequences that are eventually $\epsilon$-close. Then $(a_n)_{n = 1}^{\infty}$ is bounded if and  only if $(b_n)_{n = 1}^{\infty}$ is bounded.
+	\end{problem}
+	
+	\lined
+		\begin{proof}
+			We have that there exists an $N \geq 1$ such that for all $n \geq N$ we have $\lvert a_n - b_n \rvert \leq \epsilon$. Suppose that $(a_n)_{n = 1}^{\infty}$ is bounded then there exists an $M_1 \geq 0$ such that for all $n \geq 1$ we have $M_1 \geq \lvert a_n \rvert$. The finite sequence $b_1,b_2,b_3,\cdots,b_{N-1}$ is bounded by some $M_2 \geq 0$. Appealing to the triangle inequality we have for all $n \geq N$ that $\lvert b_n \rvert = \lvert b_n - a_N + a_N \rvert \leq 
+			 \lvert b_n - a_N \rvert + \lvert a_N \rvert \leq \epsilon + M_1$. 
+	We then see clearly that $max(\epsilon + M_1, M_2)$ bounds $(b_n)_{n = 1}^{\infty}$ thus $(b_n)_{n = 1}^{\infty}$ is bounded as desired. The same argument above with the roles of $(a_n)_{n = 1}^{\infty}$ and $(b_n)_{n = 1}^{\infty}$ swapped shows that the converse is true. 
 		\end{proof}
 	\lined
 
