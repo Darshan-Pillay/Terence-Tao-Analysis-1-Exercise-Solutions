@@ -48,4 +48,26 @@ for all $1 \leq i \leq N - 1$.  We also have that $(b_n')_{n' = N}^{\infty}$ is 
 		\end{proof}
 	\lined
 	
+	\newpage
+	
+	
+	\begin{problem}[Exercise 5.2.1]
+		Let $(a_n)_{n = 1}^{\infty}$ and  $(b_n)_{n = 1}^{\infty}$ be sequences of rational numbers. Suppose $(a_n)_{n = 1}^{\infty}$ and  $(b_n)_{n = 1}^{\infty}$ are equivalent. Show that $(a_n)_{n = 1}^{\infty}$ is a cauchy sequence if and only if $(b_n)_{n = 1}^{\infty}$ and  $(b_n)_{n = 1}^{\infty}$ is a cauchy sequence.
+	\end{problem}
+	
+	\lined
+		\begin{proof}
+			Let $\epsilon$ be a positive rational then $\frac{\epsilon}{3}$ is also positive. Suppose that $(a_n)_{n = 1}^{\infty}$ is a cauchy sequence then $(a_n)_{n = 1}^{\infty}$ is eventually $\frac{\epsilon}{3}$-steady so there exists a positive $N_1 \geq 1$ such that for all $j,k \geq N_1$ we have $\lvert a_j - a_k \rvert \leq \frac{\epsilon}{3}$. Also since $(a_n)_{n = 1}^{\infty}$ and  $(b_n)_{n = 1}^{\infty}$ are equivalent we have that there exists a positive $N_2 \geq 1$ such that for all $n \geq N_2$ we have $\lvert a_n - b_n \rvert \leq \frac{\epsilon}{3}$. 
+We define $N \coloneqq max(N_1, N_2)$ and appealing to the triangle inequality we have that for all $j,k \geq N$ that 
+
+	\begin{align*}
+		\lvert b_j - b_k \rvert  & = \lvert b_j - a_j + a_j  - b_k + a_k - a_k \rvert \\ & \leq \lvert b_j - a_j \rvert  + \lvert a_k - b_k \rvert + \lvert a_j - a_k \rvert 
+		 \\ & \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon
+	\end{align*}
+	
+	\noindent which shows that $(b_n)_{n = 1}^{\infty}$ is cauchy as desired.
+		\end{proof}
+	\lined
+
+	
 \end{document}
