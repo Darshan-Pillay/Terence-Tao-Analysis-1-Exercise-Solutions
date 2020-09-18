@@ -82,6 +82,43 @@ We define $N \coloneqq max(N_1, N_2)$ and appealing to the triangle inequality w
 	We then see clearly that $max(\epsilon + M_1, M_2)$ bounds $(b_n)_{n = 1}^{\infty}$ thus $(b_n)_{n = 1}^{\infty}$ is bounded as desired. The same argument above with the roles of $(a_n)_{n = 1}^{\infty}$ and $(b_n)_{n = 1}^{\infty}$ swapped shows that the converse is true. 
 		\end{proof}
 	\lined
+	
+	\newpage
+	
+	\begin{problem}[Exercise 5.3.2]
+		Let $x = LIM_{n \rightarrow \infty} a_n$, $x' = LIM_{n \rightarrow \infty} a'_n$ and $y = LIM_{n \rightarrow \infty} b_n$ be real numbers. Show that $xy$ is real (i.e that $(a_{n}b_{n})_{n = 1}^{\infty}$ is cauchy).
+	\end{problem}
+	
+	\lined
+		\begin{proof}[First proof]
+			We have that given a positive $\epsilon'$ that for sufficiently large $N \geq 1$ that for all $j,k \geq N$ we have $\lvert a_j - a_k \rvert \leq \epsilon'$ and $\lvert b_j - b_k \rvert \leq \epsilon'$ since 
+$(a_n)_{n = 1}^{\infty}$ and $(b_n)_{n = 1}^{\infty}$ are cauchy. We also have that $(a_n)_{n = 1}^{\infty}$ and $(b_n)_{n = 1}^{\infty}$  are bounded by some common  $C > 0$ (see Exercise 5.1.1). Thus we using the triangle inequality we have for all $j.k \geq N$ that 
+
+\begin{align*}
+	\lvert a_{j}b_{j} -  a_{k}b_{k} \rvert & = \lvert a_{j}b_{j} - a_{k}b{j} + a_{k}b{j} -  a_{k}b_{k} \rvert \\ & \leq
+	 \lvert b_j \rvert \lvert a_j - a_k \rvert + \lvert a_k \rvert\lvert b_j - b_k \rvert \\ & \leq C\epsilon' + C\epsilon'
+\end{align*}
+
+\noindent if we are given any positive $\epsilon$ we set $\epsilon' \coloneqq \frac{\epsilon}{2C}$ then the result follows. 
+		\end{proof}
+	\lined
+	
+	
+	\begin{proof}[Second proof]
+		We have that given a positive $\epsilon'$ and $\delta'$  that for sufficiently large $N \geq 1$ that for all $j,k \geq N$ we have $\lvert a_j - a_k \rvert \leq \epsilon'$ and $\lvert b_j - b_k \rvert \leq \delta'$ since 
+$(a_n)_{n = 1}^{\infty}$ and $(b_n)_{n = 1}^{\infty}$ are cauchy. But since $(a_n)_{n = 1}^{\infty}$ and $(b_n)_{n = 1}^{\infty}$ are cauchy they are bounded by a common $C > 0$ We then observe that (see Proposition 4.3.7(h) in the text)
+
+\begin{align*}
+\lvert a_{j}b_{j} -  a_{k}b_{k} \rvert  & \leq \lvert a_j \rvert \epsilon' + \rvert b_k \lvert \delta' + \epsilon' \delta' \\ & \leq C \epsilon' + C \delta' + \epsilon' \delta'
+\end{align*}
+
+\noindent In particular for a given $\epsilon > 0$ we set
+$\epsilon' \coloneqq \frac{\epsilon}{3C}$ and $\delta' = min(\frac{\epsilon}{3C},C)$. Note that $C \epsilon' \leq C \frac{\epsilon}{3C} = \frac{\epsilon}{3}$ . Also by the property of the min operator and definition of $\delta'$ we have $C \delta' \leq C min(\frac{\epsilon}{3C},C) \leq C \frac{\epsilon}{3C} = \frac{\epsilon}{3}$ and $\epsilon' \delta' \leq  \frac{\epsilon}{3C} C  = \frac{\epsilon}{3}$. Thus $ C \epsilon' + C \delta' + \epsilon' \delta' \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$ and the result follows as desired.
+
+	\end{proof}
+	
+	\lined
+	
 
 	
 \end{document}
