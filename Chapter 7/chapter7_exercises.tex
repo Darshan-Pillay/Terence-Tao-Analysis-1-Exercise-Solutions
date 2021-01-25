@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+
+\newcommand{\lined}{\noindent\rule{\textwidth}{1pt}}
+\newtheorem*{problem}{Problem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{disproof}{\emph{Disproof}}
+\newtheorem*{remark}{Remark}
+
+
+
+
+
+\title{\huge Analysis 1: Chapter 7 \\ \LARGE {Series Exercises}}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\begin{problem}[Exercise 7.2.2] Let $\sum_{n=m}^\infty a_n$ be a formal infinite series. Then $\sum_{n=m}^\infty a_n$ converges if and only if for each $\epsilon > 0$ there exists a natural $N \geq m$ such that for all $p,q \geq N$ we have $\lvert \sum_{p}^q a_n \rvert \leq\epsilon$.
+	\end{problem}
+	
+	\lined
+	\begin{proof}
+	($\impliedby$) We shall that the sequence of partial sums $S_N \coloneqq \sum_{n=0}^N a_n$ is Cauchy and hence convergent (see Proposition 6.4.18).
+	Let $\epsilon > 0$ then $\frac{\epsilon}{2} > 0$ so by assumption there exists an $N' \geq m$ such that for all $p,q \geq N'$ we have $\lvert \sum_{p}^q a_n \rvert \leq \frac{\epsilon}{2}$. In particular if we set $p$ to $N' + 1$ we have $\lvert \sum_{N'+1}^q a_n \rvert \leq \frac{\epsilon}{2}$ for all $q \geq N'+1$. We can use Lemma 7.1.4(a) to write $S_q = \sum_{m}^{N'} a_n + \sum_{N'+1}^q a_n$ for all $q \geq N'+1$. From this observe that $\lvert S_q - S_{q'} \rvert = \lvert  \sum_{N'+1}^q a_n -  \sum_{N'+1}^{q'} a_n \rvert \leq \epsilon$ for all $q,q' \geq N'+1$ from the above discussion and the triangle inequality. Therefore $S_N$ is Cauchy as desired. \paragraph{} \noindent
+	\noindent ($\implies$)
+	If the series is convergent then the partial sums sequence $S_N$ is Cauchy. So for a given $\epsilon > 0$ we have that for some natural $N' \geq M$ that $\lvert S_q - S_{q'} \rvert \leq \frac{\epsilon}{2}$ for all $q,q' \geq N'$. In particular if we set $q'$ to $N'$ then we see that using Lemma 7.1.4(a) that $\lvert S_q - S_{N'} \rvert = \lvert \sum_{n=m}^{N'} a_n + \sum_{n=N'+1}^q a_n + \sum_{n=m}^{N'} a_n \rvert \leq \frac{\epsilon}{2}$ for all $q \geq N' + 1$. Let $p,q \geq N'+1$ and without loss of generality suppose that $q \geq p > N' + 1$ then by Lemma 7.1.4(a) we have that $\sum_{n = N' + 1}^q a_n = \sum_{n = N'+1}^{p-1} a_n + \sum_{p}^{q} a_n$. Thus we see from the above discussion that 
+	
+	\begin{align*}
+\lvert \sum_{n = N' + 1}^q a_n - \sum_{n = N'+1}^{p-1} a_n \rvert  & = \lvert  \sum_{p}^{q} a_n \rvert \leq \lvert \sum_{N' + 1}^q a_n \rvert + \lvert \sum_{n = N' +1 }^{p-1} a_n \rvert  \leq \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{align*}
+
+and this completes the proof.
+
+	\end{proof}
+	\lined
+\end{document}	
